@@ -7,10 +7,10 @@
   "scripts": {
     "start": "electron .",
     "dist": "build",
-    "ship": "build --win -p always",
+    "ship": "build --win -p always --config electron-builder.yml",
     "postinstall": "install-app-deps"
   },
-  "repository": "https://github.com/Tahlil/brainjetTest.git",
+  "repository": "https://github.com/tulshidas/brainJackAutoUpdate",
   "keywords": [
     "BrainJack",
     "Brain Jack",
@@ -31,7 +31,8 @@
     "electron-packager": "^12.2.0",
     "iohook": "^0.3.0",
     "lodash": "^4.17.11",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "electron-updater": "^2.18.2"
   },
   "cmake-js": {
     "runtime": "electron",

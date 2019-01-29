@@ -1,0 +1,4 @@
+appId: tulshi.brainJackautoUpdateTest.001
+publish:
+    provider: github
+    token:  30b5d4d7eae020abc41b05be243218cb96ccd292

@@ -1,6 +1,7 @@
 const { Tray, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const ActivityTracker = require("./ActivityTracker");
+const { autoUpdater } = require("electron-updater");
 const config = require('./config');
 //const EnvironmentSpecificOperations = require('./EnvironmentSpecificOperations');
 
@@ -18,10 +19,17 @@ module.exports = class MainApp {
     this._systemTray;
     this._trayContextMenu = menu;
     this._activityTracker;
-   // this.onstartupOperations();
+    // this.onstartupOperations();
     this.appEvents();
     this.ipcEvents();
-    
+    this.autoUpdate();
+
+  }
+
+  autoUpdate() {
+    autoUpdater.on('update-downloaded', (info) => {
+      autoUpdater.quitAndInstall();
+    });
   }
 
   mainWindowSetUp() {
@@ -39,16 +47,16 @@ module.exports = class MainApp {
 
   onstartupOperations() {
     const exeName = path.basename(process.execPath);
-    console.log('process.execPath:'+process.execPath);
+    console.log('process.execPath:' + process.execPath);
     this._app.setLoginItemSettings({
-    openAtLogin: true,
-    path: process.execPath,
-    args: [
-    '--processStart', "${exeName}",
-    '--process-start-args', "--hidden"
-    ]
+      openAtLogin: true,
+      path: process.execPath,
+      args: [
+        '--processStart', "${exeName}",
+        '--process-start-args', "--hidden"
+      ]
     });
-    
+
   }
 
   systemTraySetup() {
