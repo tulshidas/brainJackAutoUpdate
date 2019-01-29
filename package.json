@@ -1,6 +1,6 @@
 {
   "name": "electron-quick-start",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": "CC0-1.0",
   "description": "A minimal Electron application",
   "main": "main.js",
@@ -49,7 +49,8 @@
       "linux"
     ],
     "arches": [
-      "ia32","x64"
+      "ia32",
+      "x64"
     ]
   },
   "build": {
