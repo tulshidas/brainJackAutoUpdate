@@ -87,11 +87,10 @@ module.exports = class MainApp {
 
   appEvents() {
     //this._app.on('ready', event => this.mainWindowSetUp(event));
-    this._app.on('ready', function(event){
+    this._app.on('ready', event => {
       this.mainWindowSetUp(event);
       autoUpdater.checkForUpdates();
-    });
-    
+    } );
     this._app.on('window-all-closed', event => {
       if (process.platform !== 'darwin') {
         app.quit();
