@@ -32,7 +32,7 @@
     "iohook": "^0.3.0",
     "lodash": "^4.17.11",
     "request": "^2.88.0",
-    "electron-updater": "^2.18.2"
+    "electron-updater": "^4.0.0"
   },
   "cmake-js": {
     "runtime": "electron",
